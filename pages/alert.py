@@ -1,9 +1,7 @@
 from base_page import BasePage
 from selenium.webdriver.common.by import By
 
-
 button = (By.CLASS_NAME, 'a-button')
-
 class AlertBox(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
@@ -20,10 +18,8 @@ class AlertBox(BasePage):
     def ok_push(self):
         return self.browser.switch_to.alert.accept()
 
-
 alert_button_conferm = (By.XPATH, "//a[@class='a-button']")
 check_result = (By.XPATH, "//p[@class='result-text']")
-
 class AlertConferm(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
@@ -48,7 +44,6 @@ class AlertConferm(BasePage):
 
 alert_button_promt = (By.CLASS_NAME, "a-button")
 check_promt_result = (By.ID, "result-text")
-
 class AlertPromt(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
