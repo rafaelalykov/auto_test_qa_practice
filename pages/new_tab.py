@@ -1,6 +1,5 @@
 from base_page import BasePage
 from selenium.webdriver.common.by import By
-import allure
 
 link_button_selector = (By.ID, 'new-page-link')
 result_selector = (By.ID, "result-text")
@@ -10,15 +9,13 @@ class NewTabLink(BasePage):
         super().__init__(browser)
 
     def open(self):
-        with allure.step('Open New tab link page'):
-            self.browser.get('https://www.qa-practice.com/elements/new_tab/link')
+        self.browser.get('https://www.qa-practice.com/elements/new_tab/link')
 
     def link_button(self):
         return self.find(link_button_selector)
 
     def click_link_button(self):
-        with allure.step('Click link on a new tab'):
-            return self.link_button().click()
+        return self.link_button().click()
 
     def result(self):
         return self.find(result_selector)
